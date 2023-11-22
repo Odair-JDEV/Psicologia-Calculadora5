@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora F5</title>
+    <style>
+
+* {
+            margin: 4px;
+            padding: 2px;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            
+        }
+
+body {
+    background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff, #ff00ff);
+    animation: moveGradient 10s linear infinite;
+    font-family: 'Arial', sans-serif;
+    margin: 0px;
+    padding: 17px;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    align-content: center;
+    flex-direction: column;
+    background-size: 400% 400%;
+    
+}
+
+/* Define a animação de movimento */
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+      h1 {
+          text-align: center;
+      }
+
+      form {
+          display: inline-table;
+          background-color: #ffffff4a;
+          padding: 30px;
+          border-radius: 9px;
+          box-shadow: 0px 20px 10px 20px rgba(0, 0, 0, 0.1);
+          width: 100%;
+          max-width: 400px;
+          backdrop-filter: blur(15px);
+          margin: 20px; /* Adicionado para melhor espaçamento em telas menores */
+      }
+
+      .quadrado {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          margin-left: 10px;
+          margin-right: 10px;
+          padding: 0px;
+          border-radius: 10px;
+          align-items: center;
+          display: flex;
+          justify-content: space-between;
+          backdrop-filter: blur(10px);
+      }
+
+      .quest {
+          margin-bottom: 20px;
+          padding: 15px;
+          border-radius: 8px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+      }
+
+      span {
+          display: block;
+          font-weight: bold;
+      }
+
+      input[type="radio"] {
+          margin-left: 5px;
+      }
+
+      button {
+          background-color: #4caf50;
+          color: #fff;
+          padding: 10px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          width: 100%;
+          margin-top: 20px;
+      }
+
+      button:hover {
+          background-color: #45a049;
+      }
+
+      #resultado {
+          margin-top: 20px;
+          font-weight: bold;
+          text-align: center;
+      }
+
+      .result-box {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    padding: 18px;
+    border-radius: 13px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+      .copy-button {
+          margin-top: 10px;
+          background-color: #4caf50;
+          color: #fff;
+          padding: 5px 10px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+      }
+
+      @media only screen and (max-width: 600px) {
+          form {
+              margin: 10px; /* Ajusta a margem para telas menores */
+          }
+      }
+  </style>
+</head>
+<body>
+  <h1>Calculadora F5</h1>
+  <form id="formCalculadora">
+    <p>Selecione um número de 1 a 5 para cada questão:</p>
+    <div class="blocos">
+
+<div class="quadrado">
+<span class="quest" id="questao1">Questão 05:</span>
+    <label>
+      <input type="radio" name="numero1" value="1"> 1
+    </label>
+    <label>
+      <input type="radio" name="numero1" value="2"> 2
+    </label>
+    <label>
+      <input type="radio" name="numero1" value="3"> 3
+    </label>
+    <label>
+      <input type="radio" name="numero1" value="4"> 4
+    </label>
+    <label>
+      <input type="radio" name="numero1" value="5"> 5
+    </label></div>
+    <div class="quadrado">
+<span class="quest" id="questao2">Questão 08:</span>
+    <label>
+      <input type="radio" name="numero2" value="1"> 1
+    </label>
+    <label>
+      <input type="radio" name="numero2" value="2"> 2
+    </label>
+    <label>
+      <input type="radio" name="numero2" value="3"> 3
+    </label>
+    <label>
+      <input type="radio" name="numero2" value="4"> 4
+    </label>
+    <label>
+      <input type="radio" name="numero2" value="5"> 5
+    </label></div>
+    <div class="quadrado">
+<span class="quest" id="questao3">Questão 12:</span>
+    <label>
+      <input type="radio" name="numero3" value="1"> 1
+    </label>
+    <label>
+      <input type="radio" name="numero3" value="2"> 2
+    </label>
+    <label>
+      <input type="radio" name="numero3" value="3"> 3
+    </label>
+    <label>
+      <input type="radio" name="numero3" value="4"> 4
+    </label>
+    <label>
+      <input type="radio" name="numero3" value="5"> 5
+    </label></div>
+    <div class="quadrado">
+<span class="quest" id="questao4">Questão 19:</span>
+    <label>
+      <input type="radio" name="numero4" value="1"> 1
+    </label>
+    <label>
+      <input type="radio" name="numero4" value="2"> 2
+    </label>
+    <label>
+      <input type="radio" name="numero4" value="3"> 3
+    </label>
+    <label>
+      <input type="radio" name="numero4" value="4"> 4
+    </label>
+    <label>
+      <input type="radio" name="numero4" value="5"> 5
+    </label></div>
+
+
+    <div class="quadrado">
+<span class="quest" id="questao5">Questão 21:</span>
+    <label>
+      <input type="radio" name="numero5" value="1"> 1
+    </label>
+    <label>
+      <input type="radio" name="numero5" value="2"> 2
+    </label>
+    <label>
+      <input type="radio" name="numero5" value="3"> 3
+    </label>
+    <label>
+      <input type="radio" name="numero5" value="4"> 4
+    </label>
+    <label>
+      <input type="radio" name="numero5" value="5"> 5
+    </label></div>
+</div>
+
+<div class="blocos">
+    <div class="quadrado">
+<span class="quest" id="questao6">Questão 35:</span>
+    <label>
+      <input type="radio" name="numero6" value="1"> 1
+    </label>
+    <label>
+      <input type="radio" name="numero6" value="2"> 2
+    </label>
+    <label>
+      <input type="radio" name="numero6" value="3"> 3
+    </label>
+    <label>
+      <input type="radio" name="numero6" value="4"> 4
+    </label>
+    <label>
+      <input type="radio" name="numero6" value="5"> 5
+    </label></div>
+
+    <div class="quadrado">
+<span class="quest" id="questao7">Questão 40:</span>
+    <label>
+      <input type="radio" name="numero7" value="1"> 1
+    </label>
+    <label>
+      <input type="radio" name="numero7" value="2"> 2
+    </label>
+    <label>
+      <input type="radio" name="numero7" value="3"> 3
+    </label>
+    <label>
+      <input type="radio" name="numero7" value="4"> 4
+    </label>
+    <label>
+      <input type="radio" name="numero7" value="5"> 5
+    </label></div>
+    <div class="quadrado">
+<span class="quest" id="questao8">Questão 61:</span>
+    <label>
+      <input type="radio" name="numero8" value="1"> 1
+    </label>
+    <label>
+      <input type="radio" name="numero8" value="2"> 2
+    </label>
+    <label>
+      <input type="radio" name="numero8" value="3"> 3
+    </label>
+    <label>
+      <input type="radio" name="numero8" value="4"> 4
+    </label>
+    <label>
+      <input type="radio" name="numero8" value="5"> 5
+    </label></div>
+    <div class="quadrado">
+
+<span class="quest" id="questao9">Questão 73:</span>
+    <label>
+      <input type="radio" name="numero9" value="1"> 1
+    </label>
+    <label>
+      <input type="radio" name="numero9" value="2"> 2
+    </label>
+    <label>
+      <input type="radio" name="numero9" value="3"> 3
+    </label>
+    <label>
+      <input type="radio" name="numero9" value="4"> 4
+    </label>
+    <label>
+      <input type="radio" name="numero9" value="5"> 5
+    </label></div>
+
+
+</div>
+
+</div>
+        <button type="submit">Calcular</button>
+    </form>
+
+    <div class="result-box" id="expressaoResult">
+        <strong>Expressão:</strong>
+        <div id="expressao"></div>
+        <button class="copy-button" onclick="copyToClipboard('expressao')">Copiar</button>
+    </div>
+
+    <div class="result-box" id="somaResult">
+        <strong>Soma:</strong>
+        <div id="soma"></div>
+        <button class="copy-button" onclick="copyToClipboard('soma')">Copiar</button>
+    </div>
+
+    <div class="result-box" id="mediaResult">
+        <strong>Média:</strong>
+        <div id="media"></div>
+        <button class="copy-button" onclick="copyToClipboard('media')">Copiar</button>
+    </div>
+
+    <script>
+        var form = document.getElementById('formCalculadora');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var soma = 0;
+            var expressao = '';
+
+            for (var i = 1; i <= 9; i++) {
+                var inputName = 'numero' + i;
+                var selectedOption = document.querySelector('input[name="' + inputName + '"]:checked');
+
+                if (selectedOption) {
+                    var valor = parseInt(selectedOption.value);
+                    soma += valor;
+
+                    // Adiciona o valor à expressão
+                    expressao += valor;
+
+                    // Adiciona o sinal de '+' se não for o último valor
+                    if (i < 9) {
+                        expressao += ' + ';
+                    }
+                } else {
+                    document.getElementById('expressao').textContent = '';
+                    document.getElementById('soma').textContent = '';
+                    document.getElementById('media').textContent = '';
+                    alert('Selecione um número de 1 a 5 para cada questão.');
+                    return;
+                }
+            }
+
+            // Calcula a média dividindo por 29
+            var media = soma / 9;
+
+            // Exibe a expressão da soma, o resultado final e a média
+            document.getElementById('expressao').textContent = expressao;
+            document.getElementById('soma').textContent = soma;
+            document.getElementById('media').textContent = media.toFixed(2);
+        });
+
+        function copyToClipboard(elementId) {
+            var element = document.getElementById(elementId);
+            var range = document.createRange();
+            range.selectNode(element);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+            document.execCommand('copy');
+            window.getSelection().removeAllRanges();
+        }
+    </script>
+</body>
+
+</html>
